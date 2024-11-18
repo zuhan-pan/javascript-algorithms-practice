@@ -1,0 +1,37 @@
+digraph ProblemSolvingPatterns {
+    rankdir=LR; // Left-to-right layout
+
+    // Global Styles
+    graph [fontname="Arial", bgcolor="#fdfdfd"];
+    node [fontname="Arial", shape=box, style=rounded, fontsize=12];
+    edge [fontname="Arial", color="#6c757d", penwidth=2];
+
+    // Main Node
+    Main [label="Problem Solving Patterns" shape=ellipse style=filled fillcolor="#007bff" fontcolor="#ffffff" fontsize=18];
+
+    // Categories
+    Basic [label="Basic Patterns" shape=box style=filled fillcolor="#17a2b8" fontcolor="#ffffff" fontsize=16];
+    Advanced [label="Advanced Patterns" shape=box style=filled fillcolor="#e83e8c" fontcolor="#ffffff" fontsize=16];
+
+    // Basic Patterns
+    FrequencyCounter [label="Frequency Counter\nCount occurrences of elements\nCompare counts or find duplicates." shape=box style=filled fillcolor="#f0f9ff" fontcolor="#007bff"];
+    MultiplePointers [label="Multiple Pointers\nUse two pointers to traverse sorted lists\nOptimize time complexity." shape=box style=filled fillcolor="#f0f9ff" fontcolor="#007bff"];
+    SlidingWindow [label="Sliding Window\nCreate a dynamic window for contiguous segments\nStreamline solutions." shape=box style=filled fillcolor="#f0f9ff" fontcolor="#007bff"];
+
+    // Advanced Patterns
+    DivideConquer [label="Divide and Conquer\nBreak problems into smaller subproblems\nCombine results for solutions." shape=box style=filled fillcolor="#fff0f5" fontcolor="#e83e8c"];
+    DynamicProgramming [label="Dynamic Programming\nBreak problems into overlapping subproblems\nStore results for optimization." shape=box style=filled fillcolor="#fff0f5" fontcolor="#e83e8c"];
+    Backtracking [label="Backtracking\nExplore solutions incrementally\nBacktrack on invalid paths." shape=box style=filled fillcolor="#fff0f5" fontcolor="#e83e8c"];
+
+    // Edges
+    Main -> Basic [color="#007bff"];
+    Main -> Advanced [color="#e83e8c"];
+
+    Basic -> FrequencyCounter [color="#007bff"];
+    Basic -> MultiplePointers [color="#007bff"];
+    Basic -> SlidingWindow [color="#007bff"];
+
+    Advanced -> DivideConquer [color="#e83e8c"];
+    Advanced -> DynamicProgramming [color="#e83e8c"];
+    Advanced -> Backtracking [color="#e83e8c"];
+}
