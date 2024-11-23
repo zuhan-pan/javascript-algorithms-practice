@@ -1,6 +1,6 @@
 class Node {
   constructor(val) {
-    this.value = val;
+    this.val = val;
     this.left = null;
     this.right = null;
   }
@@ -13,38 +13,39 @@ class BinarySearchTree {
 
   insert(val) {
     const newNode = new Node(val);
-    if (!root) {
+    if (!this.root) {
       this.root = newNode;
       return this;
     }
     let current = this.root;
-    if (val === current.val) return undefined;
+
     while (true) {
+      if (val === current.val) return undefined;
       if (val > current.val) {
         if (current.right) current = current.right;
         else {
-          current.right = current;
+          current.right = newNode;
           return this;
         }
-      }
-      if (current.left) current = current.left;
-      else {
-        current.left = current;
-        return this;
+      } else {
+        if (current.left) current = current.left;
+        else {
+          current.left = newNode;
+          return this;
+        }
       }
     }
   }
 
   find(val) {
     if (!this.root) return null;
-    if (this.root.val === val) return this.root;
     let current = this.root;
     while (current) {
       if (val > current.val) current = current.right;
-      else if (val > current.val) current = current.left;
+      else if (val < current.val) current = current.left;
       else return current;
     }
-    return undefined;
+    return null;
   }
 
   traveral() {}
